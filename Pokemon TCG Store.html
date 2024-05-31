@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Store</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "-b9y9T87ggSohfSOQ",
+            });
+        })();
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Pokémon TCG Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#intro">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Cards <i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#product-1">Booster Box</a></li>
+                        <li><a href="#product-2">Booster Bundles</a></li>
+                        <li><a href="#product-3">Elite Trainer Box</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Accessories <i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#product1">Sleeves</a></li>
+                        <li><a href="#product2">Top Loader</a></li>
+                        <li><a href="#product3">Pokemon Book</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div id="search-bar">
+                <input type="text" placeholder="Search..." id="searchInput" onkeyup="searchProducts()">
+                <button type="submit" onclick="searchProducts()">Search</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="intro" id="intro">
+            <img src="https://cdn2.bulbagarden.net/upload/6/62/Pok%C3%A9mon_TCG_logo.png" alt="Pokemon Store"
+                class="intro-image">
+            <p class="intro-description">Welcome to the Pokémon TCG Store! We offer a wide variety of Pokémon cards and
+                accessories for all your pokemon needs. Explore our collection of booster boxes, elite trainer
+                boxes, booster tins, sleeves, and much more. Whether you're a collector or a competitive player,
+                you'll find everything you need right here. Join us on our Pokémon journey and gotta catch 'em all!</p>
+        </section>
+
+        <section id="products-section" class="products-wrapper">
+            <div class="products">
+                <div class="product-box" id="product-1">
+                    <img src="https://media.miniaturemarket.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/k/pku85981-box.jpg"
+                        alt="Product 1">
+                    <p>Scarlet & Violet Temporal Forces Booster Box</p>
+                    <div class="discount-box">-10%</div>
+                    <p>Price: 2.800.000 vnđ <span class="original-price">3.500.000 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product-1">
+                    <img src="https://www.pokemoncenter.com/images/DAMRoot/High/10000/P8979_699-86374_01.jpg"
+                        alt="Product 2">
+                    <p>Scarlet & Violet Obsidian Flame Booster Box</p>
+                    <div class="discount-box">-12%</div>
+                    <p>Price: 4.000.000 vnđ <span class="original-price">4.545.455 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product-1">
+                    <img src="https://www.pokemoncenter.com/images/DAMRoot/High/10000/P8981_699-85399_01.jpg"
+                        alt="Product 3">
+                    <p>Scarlet & Violet Paradox Rift Booster Box</p>
+                    <div class="discount-box">-14%</div>
+                    <p>Price: 4.100.000 vnđ <span class="original-price">4.767.441 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product-2">
+                    <img src="https://c1-ebgames.eb-cdn.com.au/merchandising/images/packshots/c4ce035ceccf448c899c6bf3f71b3ba9_Original.jpg"
+                        alt="Product 4">
+                    <p>Scarlet & Violet Paldean Fates Booster Bundle</p>
+                    <div class="discount-box">-16%</div>
+                    <p>Price: 1.600.000 vnđ <span class="original-price">1.904.762 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product-2">
+                    <img src="https://www.pokemoncenter.com/images/DAMRoot/High/10000/P8978_185-85362_01.jpg"
+                        alt="Product 5">
+                    <p>Scarlet & Violet Paldea Evolved Booster Bundle</p>
+                    <div class="discount-box">-18%</div>
+                    <p>Price: 800.000 vnđ <span class="original-price">975.610 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product-2">
+                    <img src="https://www.pokemoncenter.com/images/DAMRoot/High/10000/P8908_184-85337_01.jpg"
+                        alt="Product 6">
+                    <p>Scarlet & Violet Booster Bundle</p>
+                    <div class="discount-box">-20%</div>
+                    <p>Price: 700.000 vnđ <span class="original-price">875.000 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product-3">
+                    <img src="https://www.pokemoncenter.com/images/DAMRoot/High/10000/P9505_189-85799_01.jpg"
+                        alt="Product 7">
+                    <p>Scarlet & Violet-Twilight Masquerade Pokémon Center Elite Trainer Box</p>
+                    <div class="discount-box">-22%</div>
+                    <p>Price: 1.700.000 vnđ <span class="original-price">2.179.487 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product-3">
+                    <img src="https://www.pokemoncenter.com/images/DAMRoot/High/10000/P9506_290-85854_01.jpg"
+                        alt="Product 8">
+                    <p>Scarlet & Violet-Shrouded Fable Pokémon Center Elite Trainer Box</p>
+                    <div class="discount-box">-24%</div>
+                    <p>Price: 1.750.000 vnđ <span class="original-price">2.302.632 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product-3">
+                    <img src="https://www.pokemoncenter.com/images/DAMRoot/High/10000/P7677_290-80986_01.jpg"
+                        alt="Product 9">
+                    <p>Celebrations Pokémon Center Elite Trainer Box</p>
+                    <div class="discount-box">-26%</div>
+                    <p>Price: 1.800.000 vnđ <span class="original-price">2.432.432 vnđ</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-wrapper">
+            <div class="products-2">
+                <div class="product-box" id="product1">
+                    <img src="https://th.bing.com/th/id/R.3242856a872149c8fb639803a21a81f9?rik=TEozHxSMLbobCA&riu=http%3a%2f%2fwww.madecollectables.com.au%2fcdn%2fshop%2fproducts%2fEvolvingEspeon.png%3fv%3d1676121155&ehk=NEMHUC%2fKUhKI2jUctrsOdgP5qrGyFJ%2b1wO1xUc2J1dE%3d&risl=&pid=ImgRaw&r=0"
+                        alt="Product 10">
+                    <p>Evolving Skies Sleeves (65pc)</p>
+                    <div class="discount-box">-28%</div>
+                    <p>Price: 150.000 vnđ <span class="original-price">208.333 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product1">
+                    <img src="https://th.bing.com/th/id/OIP.3DXz7RPgd4GIELyVf3kxqQHaHa?w=500&h=500&rs=1&pid=ImgDetMain"
+                        alt="Product 11">
+                    <p>Shining Fates</p>
+                    <div class="discount-box">-30%</div>
+                    <p>Price: 110.000 vnđ <span class="original-price">157.143 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product1">
+                    <img src="https://www.cardtrader.com/uploads/blueprints/image/230077/crown-zenith-cyan-lucario-sleeves-crown-zenith.jpg"
+                        alt="Product 12">
+                    <p>Crown Zenith Sleeves</p>
+                    <div class="discount-box">-32%</div>
+                    <p>Price: 160.000 vnđ <span class="original-price">235.294 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product2">
+                    <img src="https://ultrapro.com/cdn/shop/products/81182_Display_TL_3x5_2b0b8cc2-87c9-4877-b9bc-30bb8cb902cf_900x.png?v=1672169432"
+                        alt="Product 13">
+                    <p>Ultra-Pro Top Loader (25 pc)</p>
+                    <div class="discount-box">-34%</div>
+                    <p>Price: 100.000 vnđ <span class="original-price">151.515 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product2">
+                    <img src="https://th.bing.com/th/id/R.aa068413554e4d5ca8337dc7b8456e26?rik=5IUKerjSnyouDA&riu=http%3a%2f%2fultrapro.com%2fcdn%2fshop%2fproducts%2f81347_Display_TL_75pt_Thick.png%3fv%3d1651779709&ehk=oAkkrhlnfyM972JJYJQ6viywHmaHGppj5T7GzTL3M98%3d&risl=&pid=ImgRaw&r=0"
+                        alt="Product 14">
+                    <p>Ultra-Pro Super Thick Top Loader (25 pc)</p>
+                    <div class="discount-box">-36%</div>
+                    <p>Price: 150.000 vnđ <span class="original-price">234.375 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product2">
+                    <img src="https://ultrapro.com/cdn/shop/products/81145-S_TL_wSleeves_B_1100x.png?v=1651777717"
+                        alt="Product 15">
+                    <p>Ultra-Pro Platinum Top Loader (25 pc)</p>
+                    <div class="discount-box">-38%</div>
+                    <p>Price: 200.000 vnđ <span class="original-price">322.581 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product3">
+                    <img src="https://down-vn.img.susercontent.com/file/sg-11134201-7r98o-lkmbmq3n4wj2da"
+                        alt="Product 16">
+                    <p>Pokemon card collection box pokemon center model</p>
+                    <div class="discount-box">-40%</div>
+                    <p>Price: 140.000 vnđ <span class="original-price">233.333 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product3">
+                    <img src="https://down-vn.img.susercontent.com/file/cn-11134207-7r98o-lshzvj06egtpa1"
+                        alt="Product 17">
+                    <p>Pokemon card collection box lightning bolt model</p>
+                    <div class="discount-box">-42%</div>
+                    <p>Price: 130.000 vnđ <span class="original-price">224.138 vnđ</span></p>
+                </div>
+                <div class="product-box" id="product3">
+                    <img src="https://down-vn.img.susercontent.com/file/cn-11134207-7r98o-lshzvj06egv1a5"
+                        alt="Product 18">
+                    <p>Pokemon card collection box pikachu model</p>
+                    <div class="discount-box">-44%</div>
+                    <p>Price: 145.000 vnđ <span class="original-price">258.929 vnđ</span></p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact-wrapper" id="contact">
+            <h2>Contact</h2>
+            <p class="sub-heading">Have a question? Ask us now and we'll answer you as soon as possible!</p>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" class="contact-input">
+                        <div id="nameError" class="error"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" class="contact-input">
+                        <div id="emailError" class="error"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="question" placeholder="Your Question" class="contact-textarea"></textarea>
+                        <div id="questionError" class="error"></div>
+                    </div>
+                    <button class="contact-button" onclick="validateForm()">Send</button>
+                </div>
+                <div class="contact-info">
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Ho Chi Minh, VN
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-phone"></i>
+                        Phone: +84 69696969
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-envelope"></i>
+                        Email: mail@mail.com
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="popup" class="popup">
+            <img src="tick.png" alt="Success">
+            <h2>Question sent successfully!</h2>
+            <p>Your question has been sent to our support team! Please wait for our response!</p>
+            <button type="button" onclick="closePopup()" title="Continue shopping">OK</button>
+        </div>
+        <form>
+            <div class="h-captcha" data-captcha="true"></div>
+        </form>
+
+        <script src="https://web3forms.com/client/script.js" async defer></script>
+
+        <footer>
+            <p>&copy; 2024 Pokémon TCG Store. All rights reserved.</p>
+        </footer>
+
+        <script>
+            function validateForm() {
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var question = document.getElementById("question").value;
+                var captcha = document.querySelector('textarea[name="h-captcha-response"]').value;
+
+                var nameError = document.getElementById("nameError");
+                var emailError = document.getElementById("emailError");
+                var questionError = document.getElementById("questionError");
+
+                nameError.innerHTML = "";
+                emailError.innerHTML = "";
+                questionError.innerHTML = "";
+
+                var isValid = true;
+
+                if (name === "") {
+                    nameError.innerHTML = "Please enter your name";
+                    isValid = false;
+                }
+
+                if (email === "") {
+                    emailError.innerHTML = "Please enter your email";
+                    isValid = false;
+                } else {
+                    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(email)) {
+                        emailError.innerHTML = "Please enter a valid email address";
+                        isValid = false;
+                    }
+                }
+
+                if (question === "") {
+                    questionError.innerHTML = "Please enter your question";
+                    isValid = false;
+                }
+
+                if (captcha === "") {
+                    alert("Please complete the captcha");
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    openPopup();
+                    sendMail();
+                }
+                event.preventDefault();
+            }
+
+            function openPopup() {
+                var popup = document.getElementById("popup");
+                popup.classList.add("open-popup");
+            }
+
+            function closePopup() {
+                var popup = document.getElementById("popup");
+                popup.classList.remove("open-popup");
+            }
+        </script>
+
+<script>
+    // Function to send email
+    function sendMail() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var question = document.getElementById("question").value;
+
+        // Send email using EmailJS
+        emailjs.send("service_7rgh2gr", "template_fa9tqam", {
+            from_name: name,
+            from_email: email,
+            message: question,
+            subject : "This is my question",
+        })
+        .then(function (response) {
+            console.log("Email sent successfully:", response);
+            alert("Email Sent!!");
+        }, function (error) {
+            console.error("Error sending email:", error);
+            alert("Error sending email. Please try again later.");
+        });
+
+        // Prevent form submission
+        event.preventDefault();
+    }
+</script>
+
+        <script>
+            function searchProducts() {
+                var input = document.getElementById('searchInput').value.toLowerCase();
+                var productBoxes = document.querySelectorAll('.product-box');
+
+                productBoxes.forEach(function (box) {
+                    var description = box.querySelector('p').innerText;
+                    var regex = new RegExp(`(${input})`, 'gi');
+                    var highlightedDescription = description.replace(regex, '<span class="highlight">$1</span>');
+                    box.querySelector('p').innerHTML = highlightedDescription;
+                });
+            }
+        </script>
+
+        <script>
+            const form = document.getElementById('YOUR_FORM_ID');
+
+            form.addEventListener('submit', function (e) {
+
+                const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+                if (!hCaptcha) {
+                    e.preventDefault();
+                    alert("Please fill out captcha field")
+                    isValid = false
+                }
+            });
+        </script>
+    </main>
+</body>
+
+</html>

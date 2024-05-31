@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Pokémon TCG Store Sign Up</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="fullName">Username:</label>
+                <input type="text" id="fullName" name="fullName">
+                <div id="fullNameError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="age">Password:</label>
+                <input type="password" id="age" name="age">
+                <div id="ageError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone">
+                <div id="phoneError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="">Choose your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn">Sign Up</button>
+            </div>
+        </form>
+        <div id="popup" class="popup">
+            <img src="tick.png">
+            <h2>Sign up success!</h2>
+            <p>Your account has been registered</p>
+            <button type="button" onclick="closePopup()" title="Continue to main page">OK</button>
+        </div>
+    </div>
+
+    <script>
+        var isValid;
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+            var fullName = document.getElementById("fullName").value.trim();
+            var age = document.getElementById("age").value.trim();
+            var phone = document.getElementById("phone").value.trim();
+            var gender = document.getElementById("gender").value.trim();
+
+            var fullNameError = document.getElementById("fullNameError");
+            var ageError = document.getElementById("ageError");
+            var phoneError = document.getElementById("phoneError");
+
+            var isValid = true;
+
+            // Validate fullName
+            if (!fullName) {
+                fullNameError.innerHTML = "Username needs to be filled in";
+                isValid = false;
+            } else {
+                fullNameError.innerHTML = "";
+            }
+
+            // Validate age
+            if (!age) {
+                ageError.innerHTML = "Password needs to be filled in";
+                isValid = false;
+            } else {
+                ageError.innerHTML = "";
+            }
+
+            // Validate phone
+            if (!phone || isNaN(phone)) {
+                phoneError.innerHTML = "Phone number has to be a number";
+                isValid = false;
+            } else {
+                phoneError.innerHTML = "";
+            }
+
+            if (isValid == true) {
+                openPopup();
+                event.preventDefault();
+            } else {
+                event.preventDefault(); // Prevent form submission if there are errors
+
+            }
+        });
+
+        function openPopup() {
+            var popup = document.getElementById("popup");
+            popup.classList.add("open-popup");
+        }
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            popup.classList.remove("open-popup");
+            window.location.href = "Pokemon Store Sign In.html";
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

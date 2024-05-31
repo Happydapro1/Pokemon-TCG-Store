@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Pokémon TCG Store Sign In</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="fullName">Username:</label>
+                <input type="text" id="fullName" name="fullName">
+                <div id="fullNameError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="age">Password:</label>
+                <input type="password" id="age" name="age">
+                <div id="ageError" class="error"></div>
+            </div>
+                </select>
+            <div class="form-group">
+                <button class="btn">Sign In</button>
+            </div>
+        </form>
+        <div id="popup" class="popup">
+            <img src="tick.png">
+            <h2>Sign in success!</h2>
+            <p>You will be directed to the main page</p>
+            <button type="button" onclick="closePopup()" title="Continue to main page">OK</button>
+        </div>
+    </div>
+
+    <script>
+        var isValid;
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+            var fullName = document.getElementById("fullName").value.trim();
+            var age = document.getElementById("age").value.trim();
+
+            var fullNameError = document.getElementById("fullNameError");
+            var ageError = document.getElementById("ageError");
+
+            var isValid = true;
+
+            // Validate fullName
+            if (!fullName) {
+                fullNameError.innerHTML = "Username needs to be filled in";
+                isValid = false;
+            } else {
+                fullNameError.innerHTML = "";
+            }
+
+            // Validate age
+            if (!age) {
+                ageError.innerHTML = "Password needs to be filled in";
+                isValid = false;
+            } else {
+                ageError.innerHTML = "";
+            }
+
+            if (isValid == true) {
+                openPopup();
+                event.preventDefault();
+            } else {
+                event.preventDefault(); // Prevent form submission if there are errors
+
+            }
+        });
+
+        function openPopup() {
+            var popup = document.getElementById("popup");
+            popup.classList.add("open-popup");
+        }
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            popup.classList.remove("open-popup");
+            window.location.href = "Pokemon TCG Store.html";
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
